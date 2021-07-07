@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Home, Dashboard, Signin } from './components';
+import './styles.css'
 import reportWebVitals from './reportWebVitals';
+// Import from React-router-dom
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home title={'Rangers 63 Cars Inventory'}/>
+        </Route>
+
+        <Route path='/Dashboard'>
+          <Dashboard></Dashboard>
+        </Route>
+
+        <Route path='/Signin'>
+          <Signin></Signin>
+        </Route>
+
+      </Switch>
+    </Router>
+    
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
