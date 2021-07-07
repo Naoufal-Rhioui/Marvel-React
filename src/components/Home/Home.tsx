@@ -91,7 +91,7 @@ export const Home = ( props:Props) => {
              <main className={classes.main}>
                  <div className={classes.main_text}>
                      <h1>{props.title}</h1>
-                     <p>I like the Drones.</p>
+                     <p>I like the Cars.</p>
                      <Button color="primary" variant="contained">Click Me!</Button>
 
                  </div>
