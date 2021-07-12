@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import car_image from '../../assets/images/mercedes-benz.jpg';
-import {Link} from 'react-router-dom'
+import marvel_image from '../../assets/images/marvel-wallpaper.jpg';
+import {Link} from 'react-router-dom';
 
 // New Make Styles Code
 const useStyles = makeStyles({
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
         color: 'black'
     },
     main: {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${car_image});`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${marvel_image});`,
         width: '100%',
         height: '100%',
         backgroundSize: 'cover',
@@ -91,7 +91,7 @@ export const Home = ( props:Props) => {
              <main className={classes.main}>
                  <div className={classes.main_text}>
                      <h1>{props.title}</h1>
-                     <p>I like the Cars.</p>
+                     <p>I like Marvel.</p>
                      <Button color="primary" variant="contained">Click Me!</Button>
 
                  </div>
