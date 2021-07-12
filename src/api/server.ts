@@ -1,8 +1,8 @@
-let token = `1f5af8dba1f043011b18d3def235e3913ed416e38e13e803`
+let token = `17b4484bcf6ce4a4f891b7be7258dd918b621503859affcb`
 
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`https://drone-inventory-nr.herokuapp.com/api/drones`,{
+        const response = await fetch(`https://marvel-inventory-api.herokuapp.com/api/characters`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`https://drone-inventory-nr.herokuapp.com/api/drones`,{
+        const response = await fetch(`https://marvel-inventory-api.herokuapp.com/api/characters`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export const server_calls = {
     },
 
     update: async (id:string, data: any = {}) => {
-        const response = await fetch(`https://drone-inventory-nr.herokuapp.com/api/drones/${id}`,{
+        const response = await fetch(`https://marvel-inventory-api.herokuapp.com/api/characters/${id}`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export const server_calls = {
     },
 
     delete: async (id:string ) => {
-        const response = await fetch(`https://drone-inventory-nr.herokuapp.com/api/drones${id}`,{
+        const response = await fetch(`https://marvel-inventory-api.herokuapp.com/api/characters/${id}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

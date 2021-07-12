@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import marvel_image from '../../assets/images/marvel-wallpaper.jpg';
 import {Link} from 'react-router-dom';
-
+import { AuthCheck } from 'reactfire';
 // New Make Styles Code
 const useStyles = makeStyles({
     root:{
@@ -58,45 +58,51 @@ interface Props{
     title: string;
 }
 
-export const Home = ( props:Props) => {
-
-    //New Classes variable code
+export const Home = ( props:Props ) => {
+    
+    // New classes variable code
     const classes = useStyles();
 
-
-    return (
+    return(
         <div className={classes.root}>
-             {/* New and Updated HTML Code */}
-             <nav>
-                 <div className={classes.navbar_container}>
-                     <h1 className={ `${classes.logo}` }>
-                         <Link to='/' className={ `${classes.logo_a} ${classes.logo_navigation}` }>Brand</Link>
-                     </h1>
-                     <ul className={ ` ${classes.navigation} ${classes.logo_navigation}` }>
-                         <li>
-                             <Link to='/' className={classes.nav_a}>Home</Link>
-                         </li>
-                         <li>
-                             <Link to='/dashboard' className={classes.nav_a}>Dashboard</Link>
-                         </li>
-                         <li>
-                             <Link to='/signin' className={classes.nav_a}>Sign In</Link>
-                         </li>
+            {/* not so New and Updated HTML Code */}
+            <nav>
+                <div className={classes.navbar_container}>
+                    <h1 className={ `${classes.logo}` } >
+                        <Link to='/' className={ ` ${classes.logo_a} ${classes.logo_navigation}`}>Brand</Link>
+                    </h1>
+                    <ul className={ ` ${classes.navigation} ${classes.logo_navigation}`}>
+                        <li>
+                            <Link to='/' className={classes.nav_a}>Home</Link>
+                            </li>
+                        {/* Adding Authenticaton */}
+                        <AuthCheck fallback={
+                        <li>
+                            <Link to='/signin' className={classes.nav_a}>Sign In</Link>
+                            </li>
+                        }>
+                        <li>
+                            <Link to='/dashboard' className={classes.nav_a}>Dashboard</Link>
+                            </li>
+                            <li>
+                            <Link to='/signin' className={classes.nav_a}>Sign Out</Link>
+                            </li>
+                            </AuthCheck>
+                    </ul>
+                </div>
+            </nav>
 
-                     </ul>
-                 </div>
-             </nav>
+            {/* Main Image Area */}
+            <main className={classes.main}>
+                <div className={classes.main_text}>
+                    <h1>{props.title}</h1>
+                    <p>I like Marvel</p>
+                    <Button color="primary" variant="contained">Click Me!</Button>
 
-             {/* Main Image Area */}
-             <main className={classes.main}>
-                 <div className={classes.main_text}>
-                     <h1>{props.title}</h1>
-                     <p>I like Marvel.</p>
-                     <Button color="primary" variant="contained">Click Me!</Button>
+                </div>
 
-                 </div>
+            </main>
 
-             </main>
         </div>
     )
 }
