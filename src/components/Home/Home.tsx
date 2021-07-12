@@ -2,8 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import car_image from '../../assets/images/mercedes-benz.jpg';
-import {Link} from 'react-router-dom'
-
+import {Link} from 'react-router-dom';
 // New Make Styles Code
 const useStyles = makeStyles({
     root:{
@@ -58,45 +57,44 @@ interface Props{
     title: string;
 }
 
-export const Home = ( props:Props) => {
-
-    //New Classes variable code
+export const Home = ( props:Props ) => {
+    
+    // New classes variable code
     const classes = useStyles();
 
-
-    return (
+    return(
         <div className={classes.root}>
-             {/* New and Updated HTML Code */}
-             <nav>
-                 <div className={classes.navbar_container}>
-                     <h1 className={ `${classes.logo}` }>
-                         <Link to='/' className={ `${classes.logo_a} ${classes.logo_navigation}` }>Brand</Link>
-                     </h1>
-                     <ul className={ ` ${classes.navigation} ${classes.logo_navigation}` }>
-                         <li>
-                             <Link to='/' className={classes.nav_a}>Home</Link>
-                         </li>
-                         <li>
-                             <Link to='/dashboard' className={classes.nav_a}>Dashboard</Link>
-                         </li>
-                         <li>
-                             <Link to='/signin' className={classes.nav_a}>Sign In</Link>
-                         </li>
+            {/* New and Updated HTML Code */}
+            <nav>
+                <div className={classes.navbar_container}>
+                    <h1 className={ `${classes.logo}` } >
+                        <Link to='/' className={ ` ${classes.logo_a} ${classes.logo_navigation}`}>Brand</Link>
+                    </h1>
+                    <ul className={ ` ${classes.navigation} ${classes.logo_navigation}`}>
+                        <li>
+                            <Link to='/' className={classes.nav_a}>Home</Link>
+                            </li>
+                        <li>
+                            <Link to='/dashboard' className={classes.nav_a}>Dashboardt</Link>
+                            </li>
+                        <li>
+                            <Link to='/signin' className={classes.nav_a}>Sign In</Link>
+                            </li>
+                    </ul>
+                </div>
+            </nav>
 
-                     </ul>
-                 </div>
-             </nav>
+            {/* Main Image Area */}
+            <main className={classes.main}>
+                <div className={classes.main_text}>
+                    <h1>{props.title}</h1>
+                    <p>I like the Cars.</p>
+                    <Button color="primary" variant="contained">Click Me!</Button>
 
-             {/* Main Image Area */}
-             <main className={classes.main}>
-                 <div className={classes.main_text}>
-                     <h1>{props.title}</h1>
-                     <p>I like the Drones.</p>
-                     <Button color="primary" variant="contained">Click Me!</Button>
+                </div>
 
-                 </div>
+            </main>
 
-             </main>
         </div>
     )
 }
